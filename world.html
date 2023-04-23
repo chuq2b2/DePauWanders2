@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DePauWandersWorld</title>
+        <script>
+            window.addEventListener('scroll',(e)=>{
+              const nav = document.querySelector('header');
+              if(window.pageYOffset>0){
+                nav.classList.add("add-shadow");
+              }else{
+                nav.classList.remove("add-shadow");
+              }
+            });
+          </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>DePauWanders</h1>
+            <nav>
+                <ul class="nav_bar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="world.html">DePauWorld</a></li>
+                    <li><a href="wrapped.html">DePauWrapped</a></li>
+                </ul>
+            </nav>
+            <a id="contact"><button>Contact Us</button></a>
+        </header>
+
+        <div class="Map">
+            <h2> This is the DePauw World Map </h2>
+
+            <h2>About Us</h2>
+            <p>
+                This is a hackathon project from team 5 - Minute Craft for TigerHacks 2023 at DePauw University. 
+                Our team consists of 2 member: Minh Quang Nguyen and Quynh Diem Chu. 
+            </p>
+
+        </div>
+
+
+        
+    </body>
+
+    <footer>
+
+    </footer>
+
+</html>
