@@ -141,12 +141,30 @@ p{
     color:#d35400;
 }
 
-/*---------Common h2 section-----------*/
+/*---------Common section-----------*/
 
 .problems, .solution, map, timeline {
     height: 88vh;
     width: 100%;
 }
+
+.container {
+    height: 700px; /* Fixed height */
+    overflow-y: scroll; /* Enable scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+
+  /* Styling for anchor tags */
+a {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  /* Styling for active anchor tags */
+  a.active {
+    background-color: #eee;
+  }
 /*---------DePauWorld PAGE-----------*/
 
 /*---------DePauWrapped PAGE-----------*/
