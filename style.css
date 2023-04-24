@@ -166,5 +166,19 @@ a {
     background-color: #eee;
   }
 /*---------DePauWorld PAGE-----------*/
+iframe {
+    width: 90vw; 
+    height: 800px;
+
+    margin: 0 auto; /* Set left and right margin to auto to center horizontally */
+    display: block; /* Make the iframe a block element to center horizontally */
+
+    /*ChatGPT using - how to separate the iframe from the border*/
+    border: none; /* remove the default border */
+    box-sizing: content-box; /* ensure that padding is added to the content box */
+    padding-bottom: 100px; /* add padding to the bottom of the content box */
+    border-bottom: 1px solid #ccc; /* add a border to the bottom of the content box */
+}
+
 
 /*---------DePauWrapped PAGE-----------*/
