@@ -23,7 +23,6 @@ header{
 h1{
     display: flex;
     color: #edae49ff;
-    background-color: #0C2634;
     margin: 0;
     padding: 0;
 }
@@ -92,8 +91,12 @@ button:active{
 
 /*-----------HOME PAGE------------*/
 
+html{
+    scroll-behavior: smooth;
+}
 body{
-    background: linear-gradient(180deg, rgb(27, 66, 98), rgb(2, 41, 61))
+    background: linear-gradient(180deg, rgb(27, 66, 98), rgb(2, 41, 61));
+    scroll-behavior: smooth;
 }
 
 h2{
@@ -148,23 +151,85 @@ p{
     width: 100%;
 }
 
-.container {
-    height: 700px; /* Fixed height */
-    overflow-y: scroll; /* Enable scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
-  }
+/*---------About section-----------*/
 
-  /* Styling for anchor tags */
-a {
-    display: block;
-    padding: 10px;
+.about{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.about #description{
+    text-align: center;
+    margin-bottom: 30px;
+}
+img{
+    width: 35%;
+    height: auto;
+    border-radius: 80%;
+    padding: 20px;
     margin: 10px;
-  }
-  
-  /* Styling for active anchor tags */
-  a.active {
-    background-color: #eee;
-  }
+    
+}
+
+.minh, .quynh{
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.minh{
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quynh{
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h3{
+    color: #edae49ff;
+}
+
+.quote{
+    font-style: italic;
+}
+
+/*---------Footer section-----------*/
+
+footer{
+    background-color: linear-gradient(180deg, #042b40,#0C2634 );
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    padding: 0px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer1{
+    float: left;
+    margin: 30px;
+    padding: 80px 80px 0px 100px;
+}
+
+.footer2{
+    text-align: right;
+    margin: 30px;
+    padding: 80px 100px 0px 80px;
+}
 /*---------DePauWorld PAGE-----------*/
 iframe {
     width: 90vw; 
@@ -173,7 +238,6 @@ iframe {
     margin: 0 auto; /* Set left and right margin to auto to center horizontally */
     display: block; /* Make the iframe a block element to center horizontally */
 
-    /*ChatGPT using - how to separate the iframe from the border*/
     border: none; /* remove the default border */
     box-sizing: content-box; /* ensure that padding is added to the content box */
     padding-bottom: 100px; /* add padding to the bottom of the content box */
