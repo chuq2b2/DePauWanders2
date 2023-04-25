@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="http://d3js.org/d3.v7.min.js" ></script>
     <script src="https://kit.fontawesome.com/37d6505749.js" crossorigin="anonymous"></script>
 
 </head>
@@ -22,17 +23,6 @@
         background-color: rgb(255, 255, 255);
     }
 
-    #name {
-        position: absolute;
-        background-color: rgb(255, 255, 255);
-        width: fit-content;
-        opacity: 0;
-        border-radius: 5px;
-        border: 3px solid rgb(245, 128, 128);
-        padding: 0px 5px;
-        font-size: 1.5rem;
-
-    }
     
     .SVGmap {
     width: 100vw;
@@ -64,7 +54,18 @@
         fill:blue;
     }
 
-    
+
+    /*the javascript path pop-up a board*/
+    #name {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    opacity: 0;
+    border-radius: 5px;
+    border: 3px solid rgb(245, 128, 128);
+    padding: 0px 5px;
+    font-size: 1.5rem;
+    }
 
 </style>
 
@@ -73,7 +74,7 @@
     <?xml version="1.0"?>
 
     <div id="name">
-        <p id="namep">Name</p>
+
     </div>
 
     <div class = "SVGmap">
@@ -1615,6 +1616,59 @@
 
 </body>
 
+
+<script>    
+//Xu ly file csv
+    // var countryData = {
+    //     "United States": { name: "United States of America", description: "A country in North America." },
+    //     "Canada": { name: "Canada", description: "A country in North America." },
+    //     "Mexico": { name: "Mexico", description: "A country in North America." }
+    //     // add more country data as needed
+    //     }; 
+        
+    var countryData = {};
+    d3.csv("data_country1.csv").then(function(data) {
+         data.forEach(function(d) {
+            countryData[d.country] = d.description;
+        });
+    });
+    
+    //Xu ly hover
+    var paths = document.querySelectorAll(".allPaths");                 //access all countries in the svg map
+    var tooltip = document.querySelector('#name');                      //access the box of description when hovering in ->>> it appear
+    //var hovering = false;
+    paths.forEach(function(path){                                       //access each single country when mouseover
+        path.addEventListener("mouseover", function(){
+            var countryName = path.getAttribute('id');                  //get the name of the country through the id section
+            if (countryName in countryData){                            //check if the country was in the DePauw list or not
+                /*
+                Display the box: countryName + countryDescription taken from the countryData that we get above
+                */
+                var countryDescription = countryData[countryName];      
+                tooltip.innerHTML = "<h2>" + countryName + "</h2><p>" + countryDescription + "</p>";
+                tooltip.style.left = (event.pageX + 10) + "px";         //the position of the box calculated from the position of the mouse
+                tooltip.style.top = (event.pageY + 10) + "px";
+                // Show the tooltip -> opacity to 1
+                tooltip.style.opacity = 1;
+
+                //hovering = true;
+            }
+        });
+
+        path.addEventListener("mouseout", function() {
+        // // Hide the tooltip
+            tooltip.style.opacity = 0;
+        }); 
+    })
+
+
+
+    // setInterval(function() {
+    //     if (!hovering) {
+    //         tooltip.style("opacity", 0);
+    //     }
+    // }, 100);
+</script>
 <!-- <script>
     async function getUser(place) {
             const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=YOUR_API_KEY&location=${place}`
