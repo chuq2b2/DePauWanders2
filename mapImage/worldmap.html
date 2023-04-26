@@ -8,6 +8,7 @@
     <title>Document</title>
     <script src="http://d3js.org/d3.v7.min.js" ></script>
     <script src="https://kit.fontawesome.com/37d6505749.js" crossorigin="anonymous"></script>
+    <script src="worldmap.js"></script>
 
 </head>
 
@@ -23,7 +24,6 @@
         background-color: rgb(255, 255, 255);
     }
 
-    
     .SVGmap {
     width: 100vw;
     height: 100vh; /* Set a fixed height */
@@ -41,31 +41,66 @@
     }
 
     .allPaths {
-        fill:rgb(211, 211, 211);
+        fill:rgb(237, 234, 234);
     }
 
     .DePauw {
-        fill: pink;
+        fill: #00798C;
     }
 
  
 
     .allPaths:hover {
-        fill:blue;
+        fill: #EDAE49;
     }
 
 
     /*the javascript path pop-up a board*/
-    #name {
+    #hovername {
     position: absolute;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(211, 211, 211);
     width: fit-content;
     opacity: 0;
     border-radius: 5px;
-    border: 3px solid rgb(245, 128, 128);
+    border: 3px solid #EDAE49;
     padding: 0px 5px;
     font-size: 1.5rem;
     }
+
+/*
+click pop-up design
+*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+  
+  margin: auto;
+  padding: 15px;
+  transition: 10.5s;
+  font-size: 20px;
+  text-align: center;
+
+  background-color: #003D5B;
+  color: #EDAE49;
+  border: 3px solid #EDAE49;
+  border-radius: 5px;
+}
 
 </style>
 
@@ -73,8 +108,10 @@
 
     <?xml version="1.0"?>
 
-    <div id="name">
+    <div id="hovername"></div>
 
+    <div class="modal">
+        <div class="modal-box"></div>
     </div>
 
     <div class = "SVGmap">
@@ -538,7 +575,7 @@
             </path>
             <path class="DePauw allPaths"
                 d="M1652.9 259.5l0-0.6 2.5 0.2 0.6-2.8 3.6-0.4 2-0.4 0-1.5 8.3 7.5 3.3 4.2 3.4 7.4-0.5 3.5-4.3 1.2-3.1 2.7-4.6 0.5-2.1-3.5-1.1-4.8-5.3-6.6 3.4-1.1-6.1-5.5z" "KR"
-                id="South Korea ">
+                id="South Korea">
             </path>
             <path class="allPaths" d="M1247.5 309.4l1.5 2.8-0.3 1.5 2.4 4.8-3.9 0.2-1.7-3.1-5-0.6 3.3-6.2 3.7 0.6z" "KW"
                 id="Kuwait">
@@ -1617,114 +1654,80 @@
 </body>
 
 
-<script>    
-//Xu ly file csv
-    // var countryData = {
-    //     "United States": { name: "United States of America", description: "A country in North America." },
-    //     "Canada": { name: "Canada", description: "A country in North America." },
-    //     "Mexico": { name: "Mexico", description: "A country in North America." }
-    //     // add more country data as needed
-    //     }; 
-        
+
+<script>
     var countryData = {};
-    d3.csv("data_country1.csv").then(function(data) {
-         data.forEach(function(d) {
-            countryData[d.country] = d.description;
-        });
+d3.csv("data_country1.csv").then(function(data) {
+        data.forEach(function(d) {
+        var country = d.country;
+        var hoverdes = d.hoverDes;
+        var clickdes = d.clickDes;
+        countryData[country] = {'hover_Des':hoverdes, 'click_Des': clickdes};
     });
-    
-    //Xu ly hover
-    var paths = document.querySelectorAll(".allPaths");                 //access all countries in the svg map
-    var tooltip = document.querySelector('#name');                      //access the box of description when hovering in ->>> it appear
-    //var hovering = false;
-    paths.forEach(function(path){                                       //access each single country when mouseover
-        path.addEventListener("mouseover", function(){
-            var countryName = path.getAttribute('id');                  //get the name of the country through the id section
-            if (countryName in countryData){                            //check if the country was in the DePauw list or not
-                /*
-                Display the box: countryName + countryDescription taken from the countryData that we get above
-                */
-                var countryDescription = countryData[countryName];      
-                tooltip.innerHTML = "<h2>" + countryName + "</h2><p>" + countryDescription + "</p>";
-                tooltip.style.left = (event.pageX + 10) + "px";         //the position of the box calculated from the position of the mouse
-                tooltip.style.top = (event.pageY + 10) + "px";
-                // Show the tooltip -> opacity to 1
-                tooltip.style.opacity = 1;
-
-                //hovering = true;
-            }
-        });
-
-        path.addEventListener("mouseout", function() {
-        // // Hide the tooltip
-            tooltip.style.opacity = 0;
-        }); 
-    })
+});
 
 
+//--------------------------------------------------------------------------------//
 
-    // setInterval(function() {
-    //     if (!hovering) {
-    //         tooltip.style("opacity", 0);
-    //     }
-    // }, 100);
+//Xu ly hover and click
+var paths = document.querySelectorAll(".allPaths");                 //access all countries in the svg map
+var hoverTooltip = document.querySelector('#hovername');
+//var hovering = false;
+var tooltipDisplayed = false;
+
+paths.forEach(function(path){                                       //access each single country when mouseover
+    //hover
+    path.addEventListener("mouseover", function(){
+        var countryName = path.getAttribute('id');                  //get the name of the country through the id section
+        if (countryName in countryData){                            //check if the country was in the DePauw list or not
+            /*
+            Display the box: countryName + countryDescription taken from the countryData that we get above
+            */
+            var hoverDes = countryData[countryName]['hover_Des'];      
+            //hoverTooltip.innerHTML = "<h2>" + countryName + "</h2><img src>" + hoverDes + "</p>";
+            hoverTooltip.innerHTML = `<h2>${countryName}  <img src = ${hoverDes} width="20" height="20"></h2>`;
+            hoverTooltip.style.left = (event.pageX + 10) + "px";         //the position of the box calculated from the position of the mouse
+            hoverTooltip.style.top = (event.pageY + 10) + "px";
+            // Show the tooltip -> opacity to 1
+            hoverTooltip.style.opacity = 1;
+
+
+            //hovering = true;
+        }
+    });
+    path.addEventListener("mouseout", function() {
+    // // Hide the tooltip
+        hoverTooltip.style.opacity = 0;
+    }); 
+});
+
+//--------------------------------------------------------//
+//--------------------------------------------------------//
+
+var modal = document.getElementsByClassName("modal")[0];
+var modalBox = document.getElementsByClassName("modal-box")[0];
+
+
+paths.forEach((path) => {
+    path.addEventListener("click", function(){
+        var countryName2 = path.getAttribute('id');
+        if (countryName2 in countryData){
+            var clickDes = countryData[countryName2].click_Des;  
+            var hoverDes2 = countryData[countryName2]['hover_Des'];  
+               
+           //modalBox.innerHTML = "<h2>" + countryName2 + "</h2><p>" + hoverDes + "</p>";
+            modalBox.innerHTML = `<h2>${countryName2}  <img src = ${hoverDes2} width="20" height="20"></h2><p>${clickDes}</p>`;
+            modal.style.display = "block";
+        }
+    });
+});
+
+window.onclick = function(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+		
 </script>
-<!-- <script>
-    async function getUser(place) {
-            const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=YOUR_API_KEY&location=${place}`
-            
-            const response = await fetch(api_url);
-            
-            const data = await response.json();
-            
-            time = await data.datetime
-            // arr = Array.from(time)
-            // arr.splice(0, 11)
-            // arr.toString()
-            // timezone = (arr.splice(0, 5)).join("");
-            document.getElementById("time").innerText = `${place}'s time = ${time} ${data.timezone_abbreviation}`
-
-    }
-
-
-
-    document.querySelectorAll(".allPaths").forEach(e => {
-        e.addEventListener("mouseover", function () {
-            window.onmousemove=function (j) {
-                x = j.clientX
-                y = j.clientY
-                document.getElementById('name').style.top = y-60  + 'px'
-                document.getElementById('name').style.left = x +10 + 'px'
-            }
-            // document.querySelectorAll(".allPaths").forEach(i => {
-            //     i.style.fill = "#ececec"
-            // })
-            e.style.fill = "pink"
-            document.getElementById("name").style.opacity = 1
-            
-            document.getElementById("namep").innerText = e.id
-        })
-        e.addEventListener("mouseleave", function () {
-            e.style.fill = "#ececec"
-            document.getElementById("name").style.opacity = 0
-        })
-
-        e.addEventListener("click",function(){
-            getUser(e.id)
-        })
-
-    })
-
-    // document.getElementById("searchBtn").addEventListener("click", function () {
-    //     country = document.getElementById("search").value
-    //     document.querySelectorAll(`.allPaths`).forEach(e => {
-    //         e.style.fill = "#ececec"
-    //     })
-    //     document.querySelectorAll(`#${country}`).forEach(e => {
-    //         e.style.fill = "red"
-    //     })
-    // })
-
-</script> -->
 
 </html>
