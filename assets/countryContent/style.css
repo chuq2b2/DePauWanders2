@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 *{
-   /* background-color: #003d5bff; */
     font-family: Lato, sans-serif;
-    margin: 0;
-    
+    margin: 0;   
 }
 
+.hover-image:hover {
+    opacity: 0.7;
+  }
 
 /*------NAVIGATION BAR--------*/
 header{
@@ -88,9 +89,24 @@ button:active{
     
 }
 
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.name h2{
+    padding: 50px 20px 50px 50px;
+}
 
-/*-----------HOME PAGE------------*/
+.flag{
+    max-width: 50px;
+    width: 100%;
+    height: auto;
+}
+
+/*-----------Intro section------------*/
 
 html{
     scroll-behavior: smooth;
@@ -102,152 +118,140 @@ body{
 
 h2{
     color: #edae49ff;
-    margin-left: 30px;
+    margin-left: 0px;
     padding: 20px;
     padding-top: 60px;
     text-align: center;
 }
 
-ol{
-    margin-top: 0px;
-    margin-left: 100px;
-    margin-right: 60px;
-    padding-right: 30px;
+img{
+    display: flex;
+    flex-basis: 60%;
 }
 
-ol li{
-    margin-bottom: 15px;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 70px;
+  }
+  
+  .column {
+    flex-basis: 30%;
+    width: calc(50% - 10px);
+  }
+
+.column p{
     margin-top: 30px;
-    color: #edae49ff;
-    text-decoration: underline;
-    font-weight: bold;
+    text-align: justify;
 }
+
+.column img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+  }
 
 p{
     line-height: 150%;
     color: #edae49ff;
 }
 
-#link_dpuworld{
+
+h3, h4{
     color: #edae49ff;
+    text-align: center;
+    margin-top: 30px;
 }
 
-#link_dpuworld:hover{
-    color:#d35400;
+/*---------Cuisine section----------*/
+
+.cuisine, .traditions{
+    margin: 30px;
 }
 
-
-#link_dpuwrapped{
-    color: #edae49ff;
+#banhmi{
+    clip: rect(0px, 286px, 192px, 0px);
 }
 
-#link_dpuwrapped:hover{
-    color:#d35400;
+/*---------Organization section---------*/
+
+
+
+.organization{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
 }
 
-/*---------Common section-----------*/
-
-.problems, .solution, map, timeline {
-    height: 88vh;
+.container-org{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
     width: 100%;
+    padding: 0px 0px 0px 385px;
 }
 
-/*---------About section-----------*/
-
-.about{
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
+.container-org h3{
+    padding: 30px;
 }
 
-.about #description{
-    text-align: center;
-    margin-bottom: 30px;
+.container-org p{
+    text-align: justify;
+    padding: 30px;
 }
-img{
-    width: 35%;
+
+.container-org img{
+    max-width: 500px;
+    width: 100%;
     height: auto;
-    border-radius: 80%;
-    padding: 20px;
-    margin: 10px;
-    
 }
 
-.minh, .quynh{
-    display: inline-block;
-    vertical-align: top;
-    width: 45%;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
+/*-------Highlights section--------*/
+
+.highlights img{
+   
+    display: block;
 }
 
-
-.minh{
-    margin-left: 50px;
-    justify-content: center;
-    align-items: center;
+/*--------Contacts section----------*/
+.contact-org, .organization, .highlights, .cuisine, .traditions{
+    margin-top: 100px;
+}
+.contact-org p{
     text-align: center;
 }
-
-.quynh{
-    display: inline-block;
-    margin-left: 20px;
-    vertical-align: top;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-h3{
-    color: #edae49ff;
-}
-
-.quote{
-    font-style: italic;
-}
-
 /*---------Footer section-----------*/
 
 footer{
     background-color: linear-gradient(180deg, #042b40,#0C2634 );
-    text-align: center;
-    justify-content: center;
-    display: inline-block;
     padding: 0px;
     position: relative;
     bottom: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.footer1{
+#footer h3{
+    text-align: right;
+}
+
+#footer1{
     float: left;
+    
     margin: 30px;
-    padding: 80px 80px 0px 100px;
+    padding: 110px 40px 0px 100px;
+    flex-basis: 50%;
 }
 
-.footer2{
+#footer2{
     text-align: right;
     margin: 30px;
-    padding: 80px 100px 0px 80px;
+    padding: 80px 100px 0px 100px;
+    flex-basis: 50%;
 }
-/*---------DePauWorld PAGE-----------*/
-iframe {
-    width: 90vw; 
-    height: 800px;
-
-    margin: 0 auto; /* Set left and right margin to auto to center horizontally */
-    display: block; /* Make the iframe a block element to center horizontally */
-
-    border: none; /* remove the default border */
-    box-sizing: content-box; /* ensure that padding is added to the content box */
-    padding-bottom: 100px; /* add padding to the bottom of the content box */
-    border-bottom: 1px solid #ccc; /* add a border to the bottom of the content box */
-}
-
-.map h3{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/*---------DePauWrapped PAGE-----------*/

@@ -7,5 +7,5 @@ window.addEventListener('scroll',(e)=>{
     }
   });
 
-  const container = document.querySelector('.container');
+const container = document.querySelector('.container');
 const links = document.querySelector('.links');
