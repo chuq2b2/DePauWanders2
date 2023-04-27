@@ -1,37 +1,38 @@
-﻿country,hoverDes,clickDes,imageSource
-Bangladesh,https://cdn.iconscout.com/icon/premium/png-512-thumb/bangladesh-4406493-3658477.png?f=avif&w=512,a,
-Brazil,https://cdn.iconscout.com/icon/free/png-512/free-brazil-4406503-3658487.png?f=avif&w=512,b,
-Canada,https://cdn.iconscout.com/icon/premium/png-512-thumb/canada-4406511-3658495.png?f=avif&w=512,clickDes,
-Central African Republic,https://cdn.iconscout.com/icon/premium/png-512-thumb/central-african-republic-4406512-3658496.png?f=avif&w=512,d,
-China,https://cdn.iconscout.com/icon/premium/png-512-thumb/china-1807075-1533304.png?f=avif&w=512,w,
-Egypt,https://cdn.iconscout.com/icon/premium/png-512-thumb/egypt-4406532-3658323.png?f=avif&w=512,af,
-Ethiopia,https://cdn.iconscout.com/icon/premium/png-512-thumb/ethiopia-4406537-3658328.png?f=avif&w=512,sda,
-Georgia,https://cdn.iconscout.com/icon/premium/png-512-thumb/georgia-4406543-3658334.png?f=avif&w=512,f,
-Ghana,https://cdn.iconscout.com/icon/free/png-512/free-ghana-4406545-3658336.png?f=avif&w=512,sa,
-India,https://cdn.iconscout.com/icon/premium/png-512-thumb/india-1807063-1533292.png?f=avif&w=512,sds,
-Indonesia,https://cdn.iconscout.com/icon/premium/png-512-thumb/indonesia-4406557-3658348.png?f=avif&w=512,ds,
-Italy,https://cdn.iconscout.com/icon/premium/png-512-thumb/italy-4406561-3658352.png?f=avif&w=512,ds,
-Jamaica,https://cdn.iconscout.com/icon/free/png-512/free-bosnia-and-herzegovina-flag-country-nation-union-empire-32932.png?f=avif&w=512,ds,
-Japan,https://cdn.iconscout.com/icon/premium/png-512-thumb/japan-4406563-3658354.png?f=avif&w=512,ds,
-Kazakhstan,https://cdn.iconscout.com/icon/premium/png-512-thumb/kazakhstan-4406565-3658356.png?f=avif&w=512,ds,
-Kenya,https://cdn.iconscout.com/icon/premium/png-512-thumb/kenya-4406566-3658357.png?f=avif&w=512,dsd,
-Lesotho,https://cdn.iconscout.com/icon/premium/png-512-thumb/lesotho-4406574-3658365.png?f=avif&w=512,sd,
-Malaysia,https://cdn.iconscout.com/icon/premium/png-512-thumb/malaysia-4406584-3658375.png?f=avif&w=512,sd,
-Mauritius,https://cdn.iconscout.com/icon/premium/png-512-thumb/mauritius-4406588-3658379.png?f=avif&w=512,g,
-Mexico,https://cdn.iconscout.com/icon/premium/png-512-thumb/mexico-4406589-3658380.png?f=avif&w=512,sg,
-Mongolia,https://cdn.iconscout.com/icon/premium/png-512-thumb/mongolia-4406593-3658384.png?f=avif&w=512,et,
-Montenegro,https://cdn.iconscout.com/icon/premium/png-512-thumb/montenegro-4406594-3658385.png?f=avif&w=512,rg,
-Morocco,https://cdn.iconscout.com/icon/premium/png-512-thumb/morocco-4406595-3658386.png?f=avif&w=512,rg,
-Myanmar,,er,
-Nepal,https://cdn.iconscout.com/icon/premium/png-512-thumb/nepal-4406599-3658390.png?f=avif&w=512,dff,
-Nigeria,https://cdn.iconscout.com/icon/premium/png-512-thumb/nigeria-4406604-3658395.png?f=avif&w=512,vf,
-Pakistan,https://cdn.iconscout.com/icon/free/png-512/free-japan-1807059-1533288.png?f=avif&w=512,vdtrfs,
-Philippines,https://cdn.iconscout.com/icon/free/png-512/free-bosnia-and-herzegovina-flag-country-nation-union-empire-32932.png?f=avif&w=512,,
-South Korea,https://cdn.iconscout.com/icon/premium/png-512-thumb/south-korea-4406640-3658431.png?f=avif&w=512,rg,
-Spain,https://cdn.iconscout.com/icon/premium/png-512-thumb/spain-4406642-3658433.png?f=avif&w=512,te,
-Thailand,https://cdn.iconscout.com/icon/premium/png-512-thumb/thailand-4406653-3658444.png?f=avif&w=512,gg,
-Uganda,https://cdn.iconscout.com/icon/premium/png-512-thumb/uganda-4406661-3658452.png?f=avif&w=512,fgfg,
-United Kingdom,https://cdn.iconscout.com/icon/premium/png-512-thumb/united-kingdom-4406664-3658455.png?f=avif&w=512,sfs,
-Uzbekistan,https://cdn.iconscout.com/icon/premium/png-512-thumb/uzbekistan-4406666-3658457.png?f=avif&w=512,bg,
-Vietnam,https://cdn.iconscout.com/icon/premium/png-512-thumb/vietnam-1807082-1533311.png?f=avif&w=512,"Vietnam is a Southeast Asian country known for its beaches, rivers, Buddhist pagodas and bustling cities. Hanoi, the capital, pays homage to the nation’s iconic Communist-era leader, Ho Chi Minh, via a huge marble mausoleum. Ho Chi Minh City (formerly Saigon) has French colonial landmarks, plus Vietnamese War history museums and the Củ Chi tunnels, used by Viet Cong soldiers",
-Zimbabwe,https://cdn.iconscout.com/icon/premium/png-512-thumb/zimbabwe-4406671-3658462.png?f=avif&w=512,sfs,
+﻿country,hoverDes,clickDes,link
+Bangladesh,https://cdn.iconscout.com/icon/premium/png-512-thumb/bangladesh-4406493-3658477.png?f=avif&w=512,a,#
+Brazil,https://cdn.iconscout.com/icon/free/png-512/free-brazil-4406503-3658487.png?f=avif&w=512,b,#
+Canada,https://cdn.iconscout.com/icon/premium/png-512-thumb/canada-4406511-3658495.png?f=avif&w=512,clickDes,#
+Central African Republic,https://cdn.iconscout.com/icon/premium/png-512-thumb/central-african-republic-4406512-3658496.png?f=avif&w=512,d,#
+China,https://cdn.iconscout.com/icon/premium/png-512-thumb/china-1807075-1533304.png?f=avif&w=512,"China is a vast and diverse country located in East Asia. Its culture is one of the oldest in the world, with a rich history that spans thousands of years. Chinese cuisine is also famous around the world, with its emphasis on fresh ingredients and complex flavors. Some popular Chinese dishes include dumplings, fried rice, and Peking duck. China's location has influenced its history, with the Great Wall of China serving as a symbol of its defensive capabilities. China is also known for its traditional arts and crafts such as calligraphy, ceramics, and silk weaving.",../assets/countryContent/China.html
+Egypt,https://cdn.iconscout.com/icon/premium/png-512-thumb/egypt-4406532-3658323.png?f=avif&w=512,af,#
+Ethiopia,https://cdn.iconscout.com/icon/premium/png-512-thumb/ethiopia-4406537-3658328.png?f=avif&w=512,sda,#
+Georgia,https://cdn.iconscout.com/icon/premium/png-512-thumb/georgia-4406543-3658334.png?f=avif&w=512,f,#
+Ghana,https://cdn.iconscout.com/icon/free/png-512/free-ghana-4406545-3658336.png?f=avif&w=512,sa,#
+India,https://cdn.iconscout.com/icon/premium/png-512-thumb/india-1807063-1533292.png?f=avif&w=512,sds,#
+Indonesia,https://cdn.iconscout.com/icon/premium/png-512-thumb/indonesia-4406557-3658348.png?f=avif&w=512,ds,#
+Italy,https://cdn.iconscout.com/icon/premium/png-512-thumb/italy-4406561-3658352.png?f=avif&w=512,ds,#
+Jamaica,https://cdn.iconscout.com/icon/free/png-512/free-bosnia-and-herzegovina-flag-country-nation-union-empire-32932.png?f=avif&w=512,ds,#
+Japan,https://cdn.iconscout.com/icon/premium/png-512-thumb/japan-4406563-3658354.png?f=avif&w=512,ds,#
+Kazakhstan,https://cdn.iconscout.com/icon/premium/png-512-thumb/kazakhstan-4406565-3658356.png?f=avif&w=512,ds,#
+Kenya,https://cdn.iconscout.com/icon/premium/png-512-thumb/kenya-4406566-3658357.png?f=avif&w=512,dsd,#
+Lesotho,https://cdn.iconscout.com/icon/premium/png-512-thumb/lesotho-4406574-3658365.png?f=avif&w=512,sd,#
+Malaysia,https://cdn.iconscout.com/icon/premium/png-512-thumb/malaysia-4406584-3658375.png?f=avif&w=512,sd,#
+Mauritius,https://cdn.iconscout.com/icon/premium/png-512-thumb/mauritius-4406588-3658379.png?f=avif&w=512,g,#
+Mexico,https://cdn.iconscout.com/icon/premium/png-512-thumb/mexico-4406589-3658380.png?f=avif&w=512,sg,#
+Mongolia,https://cdn.iconscout.com/icon/premium/png-512-thumb/mongolia-4406593-3658384.png?f=avif&w=512,et,#
+Montenegro,https://cdn.iconscout.com/icon/premium/png-512-thumb/montenegro-4406594-3658385.png?f=avif&w=512,rg,#
+Morocco,https://cdn.iconscout.com/icon/premium/png-512-thumb/morocco-4406595-3658386.png?f=avif&w=512,rg,#
+Myanmar,,er,#
+Nepal,https://cdn.iconscout.com/icon/premium/png-512-thumb/nepal-4406599-3658390.png?f=avif&w=512,"Nepal is a landlocked country located in South Asia, bordered by India and China. Its culture is heavily influenced by Hinduism and Buddhism, with many temples and monasteries scattered throughout the country. Nepal is known for its stunning natural beauty, including the Himalayan mountain range and Mount Everest, the tallest mountain in the world. Nepali cuisine features a variety of dishes made with rice, lentils, and spices, such as dal bhat and momos, a type of dumpling. Nepal is also known for its traditional music, dance, and art forms, such as thangka painting and wood carving.",../assets/countryContent/Nepal.html
+Nigeria,https://cdn.iconscout.com/icon/premium/png-512-thumb/nigeria-4406604-3658395.png?f=avif&w=512,vf,#
+Pakistan,https://cdn.iconscout.com/icon/free/png-512/free-japan-1807059-1533288.png?f=avif&w=512,vdtrfs,#
+Philippines,https://cdn.iconscout.com/icon/free/png-512/free-bosnia-and-herzegovina-flag-country-nation-union-empire-32932.png?f=avif&w=512,,#
+South Korea,https://cdn.iconscout.com/icon/premium/png-512-thumb/south-korea-4406640-3658431.png?f=avif&w=512,rg,#
+Spain,https://cdn.iconscout.com/icon/premium/png-512-thumb/spain-4406642-3658433.png?f=avif&w=512,te,#
+Thailand,https://cdn.iconscout.com/icon/premium/png-512-thumb/thailand-4406653-3658444.png?f=avif&w=512,gg,#
+Uganda,https://cdn.iconscout.com/icon/premium/png-512-thumb/uganda-4406661-3658452.png?f=avif&w=512,fgfg,#
+United Kingdom,https://cdn.iconscout.com/icon/premium/png-512-thumb/united-kingdom-4406664-3658455.png?f=avif&w=512,sfs,#
+Uzbekistan,https://cdn.iconscout.com/icon/premium/png-512-thumb/uzbekistan-4406666-3658457.png?f=avif&w=512,bg,#
+Vietnam,https://cdn.iconscout.com/icon/premium/png-512-thumb/vietnam-1807082-1533311.png?f=avif&w=512,"Vietnam is a Southeast Asian country with a rich and diverse culture. Its location along the coast of the Eastern Sea of the Pacific Ocean has influenced its cuisine, which is known for its bold and fresh flavors. Some popular Vietnamese dishes include phở, a noodle soup made with beef or chicken broth, and bánh mì, a type of sandwich filled with meat, vegetables, and pâté. Vietnam's culture is heavily influenced by Confucianism, Buddhism, and Taoism, and is known for its traditional festivals and art forms such as water puppetry and silk weaving.",../assets/countryContent/Vietnam.html
+Zimbabwe,https://cdn.iconscout.com/icon/premium/png-512-thumb/zimbabwe-4406671-3658462.png?f=avif&w=512,sfs,#
+,,,#

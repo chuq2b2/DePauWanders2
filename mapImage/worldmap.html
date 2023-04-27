@@ -13,9 +13,11 @@
 </head>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
     * {
         margin: 0;
         padding: 0;
+        font-family: Lato, sans-serif;
     }
 
     body {
@@ -41,14 +43,12 @@
     }
 
     .allPaths {
-        fill:rgb(237, 234, 234);
+        fill:#F0E0C8;
     }
 
     .DePauw {
         fill: #00798C;
     }
-
- 
 
     .allPaths:hover {
         fill: #EDAE49;
@@ -58,13 +58,16 @@
     /*the javascript path pop-up a board*/
     #hovername {
     position: absolute;
-    background-color: rgb(211, 211, 211);
+    background-color: #4079a8;
+    border: 3px solid;
+    color: #EDAE49;
+
     width: fit-content;
     opacity: 0;
     border-radius: 5px;
-    border: 3px solid #EDAE49;
-    padding: 0px 5px;
-    font-size: 1.5rem;
+    
+    padding: 10px 7px;
+    font-size: 1rem;
     }
 
 /*
@@ -88,13 +91,13 @@ click pop-up design
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  
+  width: 60vw;
+
   
   margin: auto;
-  padding: 15px;
-  transition: 10.5s;
+  padding: 20px;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
 
   background-color: #003D5B;
   color: #EDAE49;
@@ -102,10 +105,36 @@ click pop-up design
   border-radius: 5px;
 }
 
+.modal-box p{
+    line-height: 150%;
+}
+.modal-box h2{
+    padding-bottom: 2%;
+}
+
+.modal-box a{
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #EDAE49;
+    color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease-in-out;
+    
+    margin-top:5%;
+}
+
+.modal-box a:hover {
+    background-color: #d89e3f;
+  }
+
 </style>
 
 <body id="body">
-
     <?xml version="1.0"?>
 
     <div id="hovername"></div>
@@ -1656,27 +1685,26 @@ click pop-up design
 
 
 <script>
-    var countryData = {};
+
+//Get data from the csv file
+var countryData = {};
 d3.csv("data_country1.csv").then(function(data) {
         data.forEach(function(d) {
         var country = d.country;
         var hoverdes = d.hoverDes;
         var clickdes = d.clickDes;
-        countryData[country] = {'hover_Des':hoverdes, 'click_Des': clickdes};
+        var link = d.link
+        countryData[country] = {'hover_Des':hoverdes, 'click_Des': clickdes, 'link':link};
     });
 });
 
-
-//--------------------------------------------------------------------------------//
-
-//Xu ly hover and click
+//--------------------------------------------------------------------------------/
+//Hover and Click
 var paths = document.querySelectorAll(".allPaths");                 //access all countries in the svg map
 var hoverTooltip = document.querySelector('#hovername');
-//var hovering = false;
-var tooltipDisplayed = false;
 
+//Hover
 paths.forEach(function(path){                                       //access each single country when mouseover
-    //hover
     path.addEventListener("mouseover", function(){
         var countryName = path.getAttribute('id');                  //get the name of the country through the id section
         if (countryName in countryData){                            //check if the country was in the DePauw list or not
@@ -1690,8 +1718,6 @@ paths.forEach(function(path){                                       //access eac
             hoverTooltip.style.top = (event.pageY + 10) + "px";
             // Show the tooltip -> opacity to 1
             hoverTooltip.style.opacity = 1;
-
-
             //hovering = true;
         }
     });
@@ -1703,10 +1729,10 @@ paths.forEach(function(path){                                       //access eac
 
 //--------------------------------------------------------//
 //--------------------------------------------------------//
-
+//Click
 var modal = document.getElementsByClassName("modal")[0];
 var modalBox = document.getElementsByClassName("modal-box")[0];
-
+var tooltipDisplayed = false;
 
 paths.forEach((path) => {
     path.addEventListener("click", function(){
@@ -1714,9 +1740,13 @@ paths.forEach((path) => {
         if (countryName2 in countryData){
             var clickDes = countryData[countryName2].click_Des;  
             var hoverDes2 = countryData[countryName2]['hover_Des'];  
-               
+            var link = countryData[countryName2].link;   
            //modalBox.innerHTML = "<h2>" + countryName2 + "</h2><p>" + hoverDes + "</p>";
-            modalBox.innerHTML = `<h2>${countryName2}  <img src = ${hoverDes2} width="20" height="20"></h2><p>${clickDes}</p>`;
+            modalBox.innerHTML =    `<h2>${countryName2}<img src = ${hoverDes2} width="20" height="20"></h2>
+                                    <p>${clickDes}</p>`;
+            if (link != '#'){
+                modalBox.innerHTML += `<a href="${link}" target="_top">See more</a>`;
+            }
             modal.style.display = "block";
         }
     });
@@ -1726,8 +1756,7 @@ window.onclick = function(e) {
   if (e.target == modal) {
     modal.style.display = "none";
   }
-}
-		
+}	
 </script>
 
 </html>
