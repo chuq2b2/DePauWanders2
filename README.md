@@ -31,3 +31,5 @@ Simply add new data to the file or modify existing data, and the website will au
 
 ## Contributors: 
 This website was created by Quynh Chu and Minh Nguyen. We are always looking to improve the website and welcome your input.
+
+Website demo: https://chuq2b2.github.io/DePauWanders2/
