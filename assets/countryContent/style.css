@@ -201,8 +201,9 @@ h3, h4{
     align-items: center;
     max-width: 500px;
     width: 100%;
-   
+    padding: 0% 0% 0% 36%;
 }
+
 
 .container-org h3{
     padding: 30px;
