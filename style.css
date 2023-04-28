@@ -19,6 +19,7 @@ header{
     position: sticky;
     position:-webkit-sticky;
     top: 0px;
+    z-index: 1000;
 }
 h1{
     display: flex;
@@ -147,7 +148,7 @@ p{
 
 /*---------Common section-----------*/
 
-.problems, .solution, map, timeline {
+.problems, .solution, map {
     height: 88vh;
     width: 100%;
 }
@@ -251,3 +252,173 @@ iframe {
 }
 
 /*---------DePauWrapped PAGE-----------*/
+
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+   
+}
+
+.timeline-container{
+    padding: 10px 50px;
+    position: relative;
+    width: 40%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+.text-box{
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+
+}
+
+.text-box h2{
+    padding: 0px;
+    text-align: left;
+    color: #042b40;
+    margin: 0px;
+}
+
+.left-container{
+    left: 0;
+}
+
+.right-container{
+    left: 50%;
+}
+
+.timeline-container img{
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -62px;
+    top: 20px;
+    z-index: 10;
+}
+
+@keyframes movedown {
+    0%{
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.timeline-container:nth-child(1){
+    animation-delay: 0s;
+}
+.timeline-container:nth-child(2){
+    animation-delay: 1s;
+}
+.timeline-container:nth-child(3){
+    animation-delay: 2s;
+}
+.timeline-container:nth-child(4){
+    animation-delay: 3s;
+}
+.timeline-container:nth-child(5){
+    animation-delay: 4s;
+}
+.timeline-container:nth-child(6){
+    animation-delay: 5s;
+}
+
+
+.right-container img{
+    left: -58px;
+}
+
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #edae49ff;
+    top: 0px;
+    left: 50%;
+    margin-left: -12px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+.text-box h2{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    left: -14px;
+}
+
+@media  screen and (max-width: 600px) {
+    .timeline{
+        margin: 50px auto;
+    }
+    .timeline::after{
+        left: 50px;
+    }
+    .timeline-container{
+        width: 80%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .text-box{
+        font-size: 13px;
+    }
+    .text-box small{
+        margin-bottom:10px;
+    }
+    .right-container{
+        left: 0;
+    }
+    .left-container img, .right-container img{
+        left: -10px
+    }
+    .left-container-arrow, .right-container-arrow{
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
+    }
+}

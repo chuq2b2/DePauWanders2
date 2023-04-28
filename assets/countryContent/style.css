@@ -5,9 +5,9 @@
     margin: 0;   
 }
 
-  .hover-image:hover {
+.hover-image:hover {
     opacity: 0.7;
-  }
+}
 
 /*------NAVIGATION BAR--------*/
 header{
@@ -20,15 +20,13 @@ header{
     position: sticky;
     position:-webkit-sticky;
     top: 0px;
+    z-index: 1000;
 }
 h1{
     display: flex;
     color: #edae49ff;
     margin: 0;
     padding: 0;
-}
-nav{
-    z-index: 999;
 }
 .nav_bar{
     list-style-type: none;
@@ -181,6 +179,11 @@ h3, h4{
 
 /*---------Organization section---------*/
 
+.wrapper{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
 .organization{
@@ -198,7 +201,7 @@ h3, h4{
     align-items: center;
     max-width: 500px;
     width: 100%;
-    padding: 0px 0px 0px 385px;
+   
 }
 
 .container-org h3{
