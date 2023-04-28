@@ -239,7 +239,7 @@ h3, h4{
 footer{
     background-color: linear-gradient(180deg, #042b40,#0C2634 );
     padding: 0px;
-    position: relative;
+    position: flex;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -252,7 +252,6 @@ footer{
 
 #footer1{
     float: left;
-    
     margin: 30px;
     padding: 110px 40px 0px 100px;
     flex-basis: 50%;
@@ -263,4 +262,18 @@ footer{
     margin: 30px;
     padding: 80px 100px 0px 100px;
     flex-basis: 50%;
+}
+
+
+@media  screen and (max-width:600px) {
+    header h1{
+        display: none;
+    }
+
+    footer{
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
 }
