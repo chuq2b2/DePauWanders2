@@ -1,10 +1,10 @@
 # DePauWanders2
-# University Culture Website
+## University Culture Website
 This website is designed to help the university community broaden its understanding of different cultures from around the world. 
 The website includes three main pages: Home, Map, and Timeline. The Map page utilizes D3 and csv to store and display data in an svg map, 
 while the Timeline page displays a chronological list of cultural events.
 
-# Home Page: 
+## Home Page: 
 The Home page is the landing page of the website. 
 It provides an overview of the website's purpose and introduces the two main features, 
 the Map and Timeline pages. Visitors to the website can navigate to these pages directly from the Home page.
